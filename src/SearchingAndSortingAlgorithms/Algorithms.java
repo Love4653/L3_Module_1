@@ -80,4 +80,22 @@ public class Algorithms {
 		}
 		return unsortedSequences;
 	}
+
+	public static List<String> sortWords(List<String> words) {
+		int sensible = words.size(); 
+		for (int i = 0; i < sensible-1; i++) {
+			for (int j = 0; j < sensible-1; j++) {
+			if(words.get(i).compareTo(words.get(j)) < 0) {
+				String t = words.get(i);
+				words.set(i, words.get(j));
+				words.set(j, t);
+			}
+			}
+		}
+		for (int k = 0; k < sensible-1; k++) {
+			System.out.println(words.get(k));
+			}
+			System.out.println("STOP HERE STOP HERE STOP HERE");
+		return words;
+	}
 }
